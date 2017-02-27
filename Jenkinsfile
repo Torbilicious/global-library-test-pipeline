@@ -1,12 +1,13 @@
 #!groovy
 
-@Library('Script-test') _
+@Library('Script-test@master')
+import net.steinberg.YamlExtractor
 
 node("master") {
 
     stage("print test message") {
 
-        new YamlExtractor(this)
+        YamlExtractor extractor = new YamlExtractor(this)
 
         YamlExtractor.printSomething("Test")
         YamlExtractor.doSomething()
