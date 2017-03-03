@@ -10,6 +10,7 @@ node("master") {
         deleteDir()
     }
 
+
     stage("print test message") {
 
         AkamaiUploader uploader = new AkamaiUploader(this)
@@ -19,6 +20,6 @@ node("master") {
 
         writeFile file: fileName, text: testText
 
-        uploader.deployToAkamai(fileName, false, these, are, test, directories)
+        uploader.deployToAkamai(fileName, false, "these", "are", "test", "directories")
     }
 }
